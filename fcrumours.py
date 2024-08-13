@@ -11,3 +11,12 @@ try:
     print("Authentication OK.")
 except:
     print("Authentication failed.")
+
+
+# find relevant tweets
+query = "Brentford transfer OR Brentford signing OR Brentford sign OR Brentford interested"
+
+potential_tweets = api.search_tweets(q=query, lang="en", count = 5)
+
+for tweet in potential_tweets:
+    print(tweet.text)
